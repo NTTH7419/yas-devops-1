@@ -41,7 +41,8 @@ jobs:
       - name: Analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -f payment-paypal/pom.xml
+        working-directory: payment-paypal
+        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       - name: Test Results
         uses: dorny/test-reporter@v1
         if: ${{ (success() || failure()) && hashFiles('payment-paypal/**/*-reports/TEST*.xml') != '' }}

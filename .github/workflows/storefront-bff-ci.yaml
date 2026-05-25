@@ -32,7 +32,8 @@ jobs:
       - name: Analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -f storefront-bff/pom.xml
+        working-directory: storefront-bff
+        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 
   Build:
     needs: Test
