@@ -70,6 +70,7 @@
         <spring-retry.version>2.0.12</spring-retry.version>
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
     </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -171,6 +172,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -264,8 +266,8 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
         </dependency>
-
     </dependencies>
+    
     <build>
         <pluginManagement>
             <plugins>
